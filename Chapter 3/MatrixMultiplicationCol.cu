@@ -4,7 +4,7 @@
 #include <string.h>
 #include <iostream>
 
-__global__ void MatrixMulRowKernel(float *A, float *B, float *C, int N) {
+__global__ void MatrixMulColKernel(float *A, float *B, float *C, int N) {
     int col = blockIdx.x * blockDim.x + threadIdx.x;
 
     if (col < N) {
